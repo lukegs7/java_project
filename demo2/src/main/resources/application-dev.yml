@@ -1,0 +1,30 @@
+server:
+    port: 8080
+    servlet:
+        context-path: /
+
+picPath: /Users/opengs7/Pictures
+
+# 连接数据库信息
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql:///air?serverTimeZone=UTC
+        username: root
+        password: root123
+        type: com.alibaba.druid.pool.DruidDataSource
+
+aliyun:
+    xxxx: xxxx123
+    yyyy: yyyy
+    zzzz: zzzz
+
+#  mybatis配置
+mybatis:
+    # 指定扫描位置
+    mapper-locations: classpath:mapper/*.xml
+    # 指定别名，可以在reusltType中直接使用类名
+    type-aliases-package: com.example.demo.entity
+    # 指定驼峰映射
+    configuration:
+        map-underscore-to-camel-case: true
