@@ -4,6 +4,9 @@ import com.example.demo.entity.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Configuration  //代表当前类是一个配置类
 public class UserConfig {
 
@@ -13,6 +16,15 @@ public class UserConfig {
         user.setId(1);
         user.setName("zhangsan");
         return user;
+    }
+
+    @PostConstruct
+    public void preConstruct() {
+        System.out.println("It is pre construct");
+    }
+    @PreDestroy
+    public void preDestroy() {
+        System.out.println("it is going to be destroyed");
     }
 }
 
