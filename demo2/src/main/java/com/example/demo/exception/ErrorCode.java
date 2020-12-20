@@ -19,7 +19,8 @@ public enum ErrorCode {
         this.status = httpStatus;
         this.message = message;
     }
-    public int getCode(){
+
+    public int getCode() {
         return code;
     }
 
@@ -30,6 +31,7 @@ public enum ErrorCode {
     public String getMessage() {
         return message;
     }
+
     @Override
     public String toString() {
         return "ErrorCode{" + "code=" + code + ", status=" + status + ", message=" + message + "}";

@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 public class GlobalExceptionHandler {
     // 也可以将 BaseException 换为 RuntimeException
     // 因为 RuntimeException 是 BaseException 的父类
-    @ExceptionHandler(value=BaseException.class)
+    @ExceptionHandler(value = BaseException.class)
     public ResponseEntity<?> handleAppException(BaseException ex, HttpServletRequest request) {
         ErrorResponse representation = new ErrorResponse(ex, request.getRequestURI());
         return new ResponseEntity<>(representation, new HttpHeaders(), ex.getError().getStatus());
