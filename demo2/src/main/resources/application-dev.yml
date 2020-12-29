@@ -13,6 +13,21 @@ spring:
     username: root
     password: root123
     type: com.alibaba.druid.pool.DruidDataSource
+#    db1:
+#      driverClassName: com.mysql.cj.jdbc.Driver
+#      username: root
+#      password: root123
+#      # spring2.0此处为jdbc-url
+#      jdbc-url: jdbc:mysql://localhost:3306/db1?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+#      type: com.alibaba.druid.pool.DruidDataSource
+#    db2:
+#      driverClassName: com.mysql.cj.jdbc.Driver
+#      username: root
+#      password: root123
+#      # spring2.0此处为jdbc-url
+#      jdbc-url: jdbc:mysql://localhost:3306/db2?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+#      type: com.alibaba.druid.pool.DruidDataSource
+
 
 my-profile:
   name: luke
