@@ -1,12 +1,8 @@
-package me.lukegs7.springcloud.dao;
-
+package me.lukegs7.springcloud.service;
 
 import me.lukegs7.springcloud.entities.Payment;
-import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
-public interface PaymentDao {
+public interface PaymentService {
     int create(Payment payment);
-
     Payment getPaymentById(Long id);
 }
