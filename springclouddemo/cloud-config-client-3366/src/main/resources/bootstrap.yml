@@ -1,17 +1,15 @@
 server:
-  port: 3344
+  port: 3366
 spring:
   application:
-    name: cloud-config-center
+    name: config-client
   cloud:
+    # Config客户端配置
     config:
-      server:
-        git:
-          uri: git@github.com:lukegs7/java_project.git
-          search-paths:
-            - springclouddemo/springcloud-config # 环境账号密码需要与idea整合
-      # 读取分支
-      label: master
+      label: master  # 分支名
+      name: config # 配置文件名
+      profile: dev  # 读取后缀名， 上述三个综合：master分支上的config-dev.yml的配置文件被读取http://config-3344.config/master/config-dev.yml
+      uri: http://localhost:3344 # 配置中心地址
 
   # rabbitmq的相关配置
   rabbitmq:
@@ -34,9 +32,9 @@ eureka:
   instance:
     hostname: cloud-config-center
 
-## rabbitmq的相关配置，暴露bus刷新配置的端点
+# 暴露监控端点
 management:
   endpoints:
     web:
       exposure:
-        include: "bus-refresh"
+        include: "*"
