@@ -1,2 +1,2 @@
-server:
-  port: 5566
+config:
+  info: "master branch, springcloug-config/config-dev.yml version=1"
