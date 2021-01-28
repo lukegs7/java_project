@@ -17,12 +17,14 @@ import springfox.documentation.schema.AlternateTypeRule;
 import springfox.documentation.schema.AlternateTypeRuleConvention;
 import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.ApiKey;
 import springfox.documentation.service.Parameter;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
@@ -63,7 +65,8 @@ public class SwaggerConfig {
                 .select()
                 .paths(Predicates.not(PathSelectors.regex("/error.*")))
                 .build()
-                .globalOperationParameters(pars);
+                .securitySchemes(new ArrayList<>(Collections.singletonList(new ApiKey("token", "token", "header"))));
+        // .globalOperationParameters(pars);// 每个接口调用都要写token
     }
 
     private ApiInfo apiInfo() {
@@ -76,7 +79,7 @@ public class SwaggerConfig {
 }
 
 /**
- *  将Pageable转换展示在swagger中
+ * 将Pageable转换展示在swagger中
  */
 @Configuration
 class SwaggerDataConfig {
