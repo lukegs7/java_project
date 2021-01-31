@@ -5,15 +5,9 @@ spring:
     url: jdbc:postgresql://localhost:5432/demo
     username: postgres
     password: postgres
-    driverClassName: org.postgresql.Driver
-    platform: postgres
+    driver-class-name: org.postgresql.Driver
   jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
-    properties:
-      hibernate:
-        temp:
-          use_jdbc_metadata_defaults: false
-    show-sql: false
-    generate-ddl: true
-    database: postgresql

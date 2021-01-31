@@ -23,24 +23,29 @@ import java.io.Serializable;
  */
 @Data
 @Entity
-@Table(name = "user",schema = "demo")
-@ApiModel(value = "用户实体", description = "User Entity")
+@Table(name = "user", schema = "demo")
+@ApiModel(value = "用户", description = "User Entity")
 public class User implements Serializable {
     private static final long serialVersionUID = 5057954049311281252L;
+
     /**
-     * 主键id
+     * 主键
      */
-    @ApiModelProperty(value = "主键id", required = true)
     @Id
-    @SequenceGenerator(sequenceName = "user_id_seq", name = "user_id",schema = "demo")
+    @SequenceGenerator(sequenceName = "user_id_seq", name = "user_id", schema = "demo", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id")
-    @Column(name="id")
+    @Column(name = "id")
+    @ApiModelProperty(value = "主键id", required = true)
     private Integer id;
     /**
      * 用户名
      */
     @ApiModelProperty(value = "用户名", required = true)
-    private String name;
+    private String username;
+
+    @ApiModelProperty(value = "密码", required = true)
+    private String password;
+
     /**
      * 工作岗位
      */
