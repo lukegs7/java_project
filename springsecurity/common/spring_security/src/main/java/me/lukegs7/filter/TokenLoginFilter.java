@@ -41,12 +41,12 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
         this.setRequiresAuthenticationRequestMatcher(new AntPathRequestMatcher("/admin/acl/login", "POST"));
     }
 
-    public TokenLoginFilter(AuthenticationManager authenticationManager, TokenManager tokenManager, RedisTemplate redisTemplate, AuthenticationManager authenticationManager1) {
-        super(authenticationManager);
-        this.tokenManager = tokenManager;
-        this.redisTemplate = redisTemplate;
-        this.authenticationManager = authenticationManager1;
-    }
+    // public TokenLoginFilter(AuthenticationManager authenticationManager, TokenManager tokenManager, RedisTemplate redisTemplate, AuthenticationManager authenticationManager1) {
+    //     super(authenticationManager);
+    //     this.tokenManager = tokenManager;
+    //     this.redisTemplate = redisTemplate;
+    //     this.authenticationManager = authenticationManager1;
+    // }
 
     //1. 获取用户提交的用户名和密码
     @Override
